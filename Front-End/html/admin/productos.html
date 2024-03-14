@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Altamar Sunglases</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="/Front-End/css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="/Front-End/css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="/Front-End/css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="/Front-End/images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="/Front-End/css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout position_head">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="/Front-End/images/loading.gif" alt="#" /></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <img src="/Front-End/images/logo3.png" alt="#" /><h4>Admin</h4>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item ">
+                                 <a class="nav-link" href="/Front-End/html/admin/admin.html">Home</a>
+                              </li>
+                              <li class="nav-item active">
+                                 <a class="nav-link" href="#">Productos</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="#">Categorias de Gafas</a>
+                              </li>
+      
+                              <li class="nav-item d_none login_btn">
+                                 <a class="nav-link" onclick="cerrar()" href="../../index.html">Log out</a>
+                              </li>
+                              
+                              
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+
+      <div class="container mt-5">
+        <button id="agregar-producto" class="btn btn-success">Agregar Producto</button>
+      </div>
+    
+      <!-- Formulario para agregar un nuevo producto -->
+      <div class="modal" id="agregarProductoModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Encabezado del modal -->
+            <div class="modal-header">
+              <h4 class="modal-title">Agregar Nuevo Producto</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Cuerpo del modal -->
+            <div class="modal-body">
+              <form id="formulario-producto">
+                <div class="form-group">
+                  <label for="nombre_producto">Nombre del Producto:</label>
+                  <input type="text" class="form-control" id="nombre_producto" required>
+                </div>
+                <div class="form-group">
+                  <label for="descripcion">Descripción:</label>
+                  <input type="text" class="form-control" id="descripcion" required>
+                </div>
+                <div class="form-group">
+                    <label for="talla">Talla:</label>
+                    <input type="text" class="form-control" id="talla" required>
+                  </div>
+
+                <div class="form-group">
+                    <label for="peso">Peso:</label>
+                    <input type="text" class="form-control" id="peso" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="precio_unitario">Precio Unitario:</label>
+                    <input type="text" class="form-control" id="precio_unitario" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="iva">IVA (%): Digitar numero </label>
+                    <input type="text" class="form-control" id="iva" required>
+                  </div>
+                <button type="submit" class="btn btn-primary ms-center" onclick="agregarProducto()">Agregar</button>
+                
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    
+     
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- about section -->
+      <div class="about">
+         <div class="container">
+            <div class="row d_flex">
+               <div class="col-md-5">
+                  <div class="about_img">
+                     <figure><img src="/Front-End/images/about_img.png" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-7">
+                  <div class="titlepage">
+                     <h2>About Our Shop</h2>
+                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                  </div>
+                  <a class="read_more" href="#">Read More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- about section -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8 offset-md-2">
+                     <ul class="location_icon">
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +01 1234567890</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2024 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="/Front-End/js/jquery.min.js"></script>
+      <script src="/Front-End/js/popper.min.js"></script>
+      <script src="/Front-End/js/bootstrap.bundle.min.js"></script>
+      <script src="/Front-End/js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="/Front-End/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="/Front-End/js/custom.js"></script>
+      <script src="/Front-End/js/axioscerrarsesion.js"></script>
+      <script src="../../js/axiosagregarproducto.js"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+   </body>
+</html>

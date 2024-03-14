@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .cart {
+    border: 2px solid blue;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 50px auto;
+  }
+  
+  .items {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .btn-finalizar-compra {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-finalizar-compra:hover {
+    background-color: darkblue;
+  }
+  

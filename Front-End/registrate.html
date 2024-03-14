@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="description" content="This is a login page template based on Bootstrap 5">
+
+    <title>Registrate</title>
+
+    <link rel="icon" href="../img/logo.png" type="image/png">
+
+    <link rel="stylesheet" href="/Front-End/css/bootstrap.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="/Front-End/js/axiosregistrar.js"></script>
+
+</head>
+
+ 
+
+<body class="main-layout">
+
+    <section class="h-100">
+
+        <div class="container h-100">
+
+            <div class="row justify-content-sm-center h-100">
+
+                <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+
+                    <div class="text-center my-5">
+
+                       
+
+                    </div>
+
+                    <div class="card shadow-lg card-r">
+
+                        <div class="card-body p-5">
+
+                            <h1 class="fs-4 card-title fw-bold mb-4 text-center">Registro</h1>
+
+                            <form id="formulario" method="post">
+
+                                <div class="mb-3">
+
+                                    <label class="mb-2 text-muted" for="name">Nombre completo</label>
+
+                                    <input id="nombre" type="text" class="form-control" name="name" value="" required autofocus>
+
+                                    <div class="invalid-feedback">
+
+                                        Nombre es requerido
+
+                                    </div>
+
+                                </div>
+
+ 
+
+                                <div class="mb-3">
+
+                                    <label class="mb-2 text-muted" for="email">Correo electrónico</label>
+
+                                    <input id="correo" type="email" class="form-control" required>
+
+                                    <div class="invalid-feedback">
+
+                                        Correo electrónico es inválido
+
+                                    </div>
+
+                                </div>
+
+ 
+
+                                <div class="mb-3">
+
+                                    <label class="mb-2 text-muted" for="password">Contraseña</label>
+
+                                    <input id="password" type="password" class="form-control" required>
+
+                                    <div class="invalid-feedback">
+
+                                        Contraseña es requerida
+
+                                    </div>
+
+                                </div>
+
+ 
+
+                                <div class="mb-3">
+
+                                    <label class="mb-2 text-muted" for="repite_password">Confirme la contraseña</label>
+
+                                    <input id="repite_password" type="password" class="form-control" required>
+
+                                    <div class="invalid-feedback">
+
+                                        Confirme la contraseña es requerida
+
+                                    </div>
+
+                                </div>
+
+ 
+
+                                <p class="form-text text-muted mb-3">
+
+                                    <p class="form-text text-muted mb-3">
+
+                                        Al registrarse, acepta nuestros <a href="" data-bs-toggle="modal" data-bs-target="#termsModal">términos y condiciones</a>
+
+ 
+
+                                    </p>
+
+                                   
+
+                                   
+
+                                </p>
+
+ 
+
+                                <div class="align-items-center d-flex justify-content-center">
+
+                                    <button type="submit" class="btn btn-primary ms-center" onclick="register_usuario()">
+
+                                        Registrarme
+
+                                    </button>
+
+                                </div>
+
+                                <div class="mt-3">
+
+                                    ¿Ya tienes una cuenta? <a href="/Front-End/login.html" class="text-decoration-none">Inicia sesión</a>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+ 
+
+    <!-- Ventana modal de términos y condiciones -->
+
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="termsModalLabel">Términos y Condiciones</h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <h6>Introducción</h6>
+
+                    <p>Bienvenido a nuestro sitio web. Al acceder y utilizar este sitio web, usted acepta cumplir con los siguientes términos y condiciones de uso.</p>
+
+ 
+
+                    <h6>Licencia de Uso</h6>
+
+                    <p>Se le concede una licencia limitada para acceder y utilizar este sitio web solo para fines personales. Queda prohibido cualquier uso comercial no autorizado del sitio web.</p>
+
+ 
+
+                    <h6>Contenido</h6>
+
+                    <p>Todo el contenido presentado en este sitio web, incluyendo texto, imágenes, gráficos y logotipos, está protegido por derechos de autor y propiedad intelectual. No está permitido copiar, reproducir ni distribuir dicho contenido sin nuestro permiso.</p>
+
+ 
+
+                    <h6>Privacidad</h6>
+
+                    <p>Valoramos y respetamos su privacidad. Consulte nuestra política de privacidad para obtener información detallada sobre cómo recopilamos, utilizamos y protegemos su información personal.</p>
+
+ 
+
+                   
+
+                </div>
+
+                <div class="modal-footer">
+
+                   
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+ 
+    <script src="/Front-End/js/bootstrap.min.js"></script>
+
+</body>
+
+ 
+
+</html>
