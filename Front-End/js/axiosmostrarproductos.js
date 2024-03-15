@@ -1,3 +1,12 @@
+$(document).ready(function() {
+  $("#editar-producto").click(function() {
+    $("#editar").modal("show");
+  });
+
+  
+ 
+});
+
 function ver_usuarios() {
     const config = {
       method: 'GET',
@@ -86,11 +95,10 @@ function ver_usuarios() {
             <td>${productos[6] !== undefined ? productos[6] : productos.categoria}</td>
             <td>${obtenerEstadoTexto(productos[7] !== undefined ? productos[7] : productos.categoria)}</td>
             <td class="btn-group btn-group-sm" role="group" aria-label="Acciones">
-                <a class="btn btn-warning mx-5" onClick="agregarproducto()">Edit</a>
+                <a  id="agregar-producto" class="btn btn-warning mx-5" onClick="agregarproducto()">Edit</a>
                 <a class="btn btn-danger" onClick="onDelete(this)">Delete</a>
           </td>
-
-            
+         
             `;
             tablaProductos.appendChild(row);
           });
@@ -181,4 +189,3 @@ function agregarproducto() {
               }).catch(err => console.log('Error: ', err))
             } 
 
-           

@@ -106,82 +106,16 @@
             
          
        <!-------------------------------MODAL DE EDITAR ------------------------------------->
-       <div class="container mt-5">
-         <button id="agregar-product" class="btn btn-success" style="margin-bottom: 10px;">Agregar Producto</button>
-       </div>
-     
+       
+       
+    
 
-    <div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="agregarProducto" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-              <div class="modal-header bg-success">
-               <h4 class="modal-title">Agregar Nuevo Producto</h4>
-               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body bg-light">
-                  <div class="row">
-
-                      <div class="col-lg-6 col-md-6 ">
-                          <div class="mb-2">
-                              <label for="id" class="form-label"><b>Id</b></label>
-                              <input type="text" class="form-control" id="id" readonly>
-                          </div>
-                   </div>
-                   
-                     
-                 
-                  <div class="col-lg-6 col-md-6 ">
-
-                      <div class="mb-2">
-                          <label for="nombre_producto" class="form-label"><b>Nombre de producto</b></label>
-                          <input type="text" class="form-control" id="nombre_producto" readonly>
-                      </div>
-                      
-                     <div class="mb-2">
-                        <label for="descripcion" class="form-label"><b>Descripcion</b></label>
-                        <input type="text" class="form-control" id="descripcion" readonly>
-                     </div>
-
-                     <div class="mb-2">
-                        <label for="talla" class="form-label"><b>Talla</b></label>
-                        <input type="text" class="form-control" id="talla" readonly>
-                     </div>
-                    
-                     <div class="mb-2">
-                        <label for="precio" class="form-label"><b>Precio</b></label>
-                        <input type="text" class="form-control" id="precio" readonly>
-                     </div>
-
-                     <div class="mb-2">
-                        <label for="iva" class="form-label"><b>IVA</b></label>
-                        <input type="text" class="form-control" id="iva" readonly>
-                     </div>
-
-                     <div class="mb-2">
-                        <label for="categoria" class="form-label"><b>Categoria</b></label>
-                        <input type="text" class="form-control" id="categoria" readonly>
-                     </div>
-                 </div>
-                  
-              </div>
-              <div class="modal-footer bg-light">
-                  <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-success " onclick="agregarproducto()" >Editar</button>
-              </div>
-          </div>
-      </div>
-  </div>
-
-
-  <!-------------------------------------------------------------------------------->
-
-
-  <!-------------------------------MODAL DE ELIMINAR------------------------------------->
+  <!------------------------------MODAL AÑADIR PRODUCTO------------------------------------------------->
   
-            <!--
-      <div class="container mt-5">
-        <button id="agregar-producto" class="btn btn-success" style="margin-bottom: 10px;">Agregar Producto</button>
-      </div>
+           
+  <div class="container mt-5">
+   <button id="agregar-producto" class="btn btn-primary" style="margin-bottom: 10px;">Añadir Producto</button>
+ </div>
     
     
       <div class="modal" id="agregarProductoModal">
@@ -229,16 +163,16 @@
                     <label for="iva">IVA (%): Digitar numero </label>
                     <input type="text" class="form-control" id="iva" required>
                   </div>
-                <button type="submit" class="btn btn-primary ms-center" onclick="agregarproducto()">Agregar</button>
+                <button type="submit" class="btn btn-primary ms-center" onclick="añadir_prod()">Agregar</button>
                 
               </form>
             </div>
             
           </div>
         </div>
-      </div>-->
+      </div>
     
-
+<!------------------------------------------------------------------------------------->
      
       
       <footer>
@@ -279,7 +213,7 @@
       <script src="/Front-End/js/custom.js"></script>
       <script src="/Front-End/js/axioscerrarsesion.js"></script>
       <script src="../../js/axiosagregarproducto.js"></script>
-      <script src="../../js/axiosproductos.js"></script>
+      <script src="../../js/axiosmostrarproductos.js "></script>
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script src="https://unpkg.com/jspdf-autotable"></script>
       <script src="https://unpkg.com/jspdf"></script>
