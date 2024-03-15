@@ -30,7 +30,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
-   <body class="main-layout position_head">
+   <body onload="ver_productos()" class="main-layout position_head">
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="/Front-End/images/loading.gif" alt="#" /></div>
@@ -59,13 +59,13 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item ">
-                                 <a class="nav-link" href="/Front-End/html/admin/admin.html">Home</a>
+                                 <a class="nav-link" href="admin.html">Inicio</a>
                               </li>
                               <li class="nav-item active">
-                                 <a class="nav-link" href="#">Productos</a>
+                                 <a class="nav-link" href="productos.html">Productos</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="#">Categorias de Gafas</a>
+                                 <a class="nav-link" href="categorias.html">Categorias de Gafas</a>
                               </li>
       
                               <li class="nav-item d_none login_btn">
@@ -81,28 +81,130 @@
             </div>
          </div>
       </header>
+     
+      <h2 class="text-center mt-4"><span class="text-primary"></>Lista de productos</h2>
+         <div class="container">
+           <div class="table-responsive">
+             <table id="tablacontacs" class=" table table-striped mt-3 " style="width:100%">
+               <thead>
+                 <tr>
+                   <th><b><span class="text-primary"></>ID de producto</b> </th>
+                   <th><b><span class="text-primary"></>Nombre de producto</b></th>
+                   <th><b><span class="text-primary"></>Descripcion de producto</b></th>
+                  <th><b><span class="text-primary"></> Talla</b></th>
+                  <th><b><span class="text-primary"></> Precio</b></th>
+                  <th><b><span class="text-primary"></>Peso</b></th>
+                  <th><b><span class="text-primary"></>IVA</b></th>
+                  <th><b><span class="text-primary"></>Categoria</b></th>  
+                  <th><b><span class="text-primary"></>Opciones</b></th>
+                 </tr>
+               </thead>
+               <tbody id="tabla-productos"></tbody>
+             </table>
+           </div>
+         </div>
+            
+         
+       <!-------------------------------MODAL DE EDITAR ------------------------------------->
+       <div class="container mt-5">
+         <button id="agregar-product" class="btn btn-success" style="margin-bottom: 10px;">Agregar Producto</button>
+       </div>
+     
 
+    <div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="agregarProducto" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header bg-success">
+               <h4 class="modal-title">Agregar Nuevo Producto</h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body bg-light">
+                  <div class="row">
+
+                      <div class="col-lg-6 col-md-6 ">
+                          <div class="mb-2">
+                              <label for="id" class="form-label"><b>Id</b></label>
+                              <input type="text" class="form-control" id="id" readonly>
+                          </div>
+                   </div>
+                   
+                     
+                 
+                  <div class="col-lg-6 col-md-6 ">
+
+                      <div class="mb-2">
+                          <label for="nombre_producto" class="form-label"><b>Nombre de producto</b></label>
+                          <input type="text" class="form-control" id="nombre_producto" readonly>
+                      </div>
+                      
+                     <div class="mb-2">
+                        <label for="descripcion" class="form-label"><b>Descripcion</b></label>
+                        <input type="text" class="form-control" id="descripcion" readonly>
+                     </div>
+
+                     <div class="mb-2">
+                        <label for="talla" class="form-label"><b>Talla</b></label>
+                        <input type="text" class="form-control" id="talla" readonly>
+                     </div>
+                    
+                     <div class="mb-2">
+                        <label for="precio" class="form-label"><b>Precio</b></label>
+                        <input type="text" class="form-control" id="precio" readonly>
+                     </div>
+
+                     <div class="mb-2">
+                        <label for="iva" class="form-label"><b>IVA</b></label>
+                        <input type="text" class="form-control" id="iva" readonly>
+                     </div>
+
+                     <div class="mb-2">
+                        <label for="categoria" class="form-label"><b>Categoria</b></label>
+                        <input type="text" class="form-control" id="categoria" readonly>
+                     </div>
+                 </div>
+                  
+              </div>
+              <div class="modal-footer bg-light">
+                  <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-success " onclick="agregarproducto()" >Editar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <!-------------------------------------------------------------------------------->
+
+
+  <!-------------------------------MODAL DE ELIMINAR------------------------------------->
+  
+            <!--
       <div class="container mt-5">
-        <button id="agregar-producto" class="btn btn-success">Agregar Producto</button>
+        <button id="agregar-producto" class="btn btn-success" style="margin-bottom: 10px;">Agregar Producto</button>
       </div>
     
-      <!-- Formulario para agregar un nuevo producto -->
+    
       <div class="modal" id="agregarProductoModal">
         <div class="modal-dialog">
           <div class="modal-content">
           
-            <!-- Encabezado del modal -->
+            
             <div class="modal-header">
               <h4 class="modal-title">Agregar Nuevo Producto</h4>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             
-            <!-- Cuerpo del modal -->
+            
             <div class="modal-body">
               <form id="formulario-producto">
                 <div class="form-group">
                   <label for="nombre_producto">Nombre del Producto:</label>
                   <input type="text" class="form-control" id="nombre_producto" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="categoria">Categoria:</label>
+                  <input type="text" class="form-control" id="categoria" required>
                 </div>
                 <div class="form-group">
                   <label for="descripcion">Descripción:</label>
@@ -127,48 +229,27 @@
                     <label for="iva">IVA (%): Digitar numero </label>
                     <input type="text" class="form-control" id="iva" required>
                   </div>
-                <button type="submit" class="btn btn-primary ms-center" onclick="agregarProducto()">Agregar</button>
+                <button type="submit" class="btn btn-primary ms-center" onclick="agregarproducto()">Agregar</button>
                 
               </form>
             </div>
             
           </div>
         </div>
-      </div>
+      </div>-->
     
+
      
-      <!-- end header inner -->
-      <!-- end header -->
-      <!-- about section -->
-      <div class="about">
-         <div class="container">
-            <div class="row d_flex">
-               <div class="col-md-5">
-                  <div class="about_img">
-                     <figure><img src="/Front-End/images/about_img.png" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-7">
-                  <div class="titlepage">
-                     <h2>About Our Shop</h2>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                  </div>
-                  <a class="read_more" href="#">Read More</a>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- about section -->
-      <!--  footer -->
+      
       <footer>
          <div class="footer">
             <div class="container">
                <div class="row">
                   <div class="col-md-8 offset-md-2">
                      <ul class="location_icon">
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
-                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +01 1234567890</li>
-                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Barranquilla, Atlantico</li>
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +57 3182596284</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> altamarsunglases@gmail.com</li>
                      </ul>
                   </div>
                </div>
@@ -177,13 +258,16 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>© 2024 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+                        <p>© 2024 Reservados todos los derechos. Diseñado por <a href="#"> David Altamar</a></p>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-      </footer>
+      </footer>           
+      
+     
+            
       <!-- end footer -->
       <!-- Javascript files-->
       <script src="/Front-End/js/jquery.min.js"></script>
@@ -195,7 +279,17 @@
       <script src="/Front-End/js/custom.js"></script>
       <script src="/Front-End/js/axioscerrarsesion.js"></script>
       <script src="../../js/axiosagregarproducto.js"></script>
-
+      <script src="../../js/axiosproductos.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="https://unpkg.com/jspdf-autotable"></script>
+      <script src="https://unpkg.com/jspdf"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.16/jspdf.plugin.autotable.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

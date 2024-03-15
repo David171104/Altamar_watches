@@ -13,16 +13,17 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="../../css/bootstrap.min.css">
       <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="../../css/style.css">
       <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="../../css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="icon" href="../../images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
+      
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <!--[if lt IE 9]>
@@ -30,13 +31,14 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
-   <body class="main-layout position_head">
+   <body onload="ver_categorias()" class="main-layout position_head">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+         <div class="loader"><img src="../../images/loading.gif" alt="#" /></div>
       </div>
       <!-- end loader -->
       <!-- header -->
+     
       <header>
          <!-- header inner -->
          <div class="header">
@@ -46,7 +48,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                              <img src="../../images/logo3.png" alt="#" /><h4>Admin</h4>
                            </div>
                         </div>
                      </div>
@@ -59,29 +61,20 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item ">
-                                 <a class="nav-link" href="index.html">Home</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="about.html">About</a>
+                                 <a class="nav-link" href="admin.html">Inicio</a>
                               </li>
                               <li class="nav-item active">
-                                 <a class="nav-link" href="glasses.html">Our Glasses</a>
+                                 <a class="nav-link" href="productos.html">Productos</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="shop.html">Shop</a>
+                                 <a class="nav-link" href="categorias.html">Categorias de Gafas</a>
                               </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contact Us</a>
-                              </li>
+      
                               <li class="nav-item d_none login_btn">
-                                 <a class="nav-link" href="#">Login</a>
+                                 <a class="nav-link" onclick="cerrar()" href="../../index.html">Log out</a>
                               </li>
-                              <li class="nav-item d_none">
-                                 <a class="nav-link" href="#">Register</a>
-                              </li>
-                              <li class="nav-item d_none sea_icon">
-                                 <a class="nav-link" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><i class="fa fa-search" aria-hidden="true"></i></a>
-                              </li>
+                              
+                              
                            </ul>
                         </div>
                      </nav>
@@ -90,86 +83,63 @@
             </div>
          </div>
       </header>
+      
+      
+      <h2 class="text-center mt-4"><span class="text-primary"></>Lista de categorias</h2>
+         <div class="container">
+           <div class="table-responsive">
+             <table id="tablacontacs" class=" table table-striped mt-3 " style="width:100%">
+               <thead>
+                 <tr>
+                   <th><b><span class="text-primary"></>ID de categoria</b> </th>
+                   <th><b><span class="text-primary"></>Nombre de categoria</b></th> 
+                  <th><b><span class="text-primary"></>Opciones</b></th>
+                 </tr>
+               </thead>
+               <tbody id="tabla-categoria"></tbody>
+             </table>
+           </div>
+         </div>
+
+      <div class="container mt-5">
+         <button id="agregar-categoria" class="btn btn-success" style="margin-bottom: 10px;">Agregar categoria</button>
+       </div>
+     
+       <!-- Formulario para agregar un nuevo producto -->
+       <div class="modal" id="agregarCategoriaModal">
+         <div class="modal-dialog">
+           <div class="modal-content">
+           
+             <!-- Encabezado del modal -->
+             <div class="modal-header">
+               <h4 class="modal-title">Agregar Nueva Categoria</h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+             </div>
+             
+             <!-- Cuerpo del modal -->
+             <div class="modal-body">
+               <form id="formulario-categoria">
+                 <div class="form-group">
+                   <label for="nombre_categoria">Nombre de la Categoria:</label>
+                   <input type="text" class="form-control" id="nombre_categoria" required>
+                 </div>
+                
+                  
+                 <button type="submit" class="btn btn-primary ms-center" onclick="añadir_categoria()">Agregar</button>
+                 
+               </form>
+             </div>
+             
+           </div>
+         </div>
+       </div>
+     
       <!-- end header inner -->
       <!-- end header -->
       <!-- Our  Glasses section -->
-      <div class="glasses">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-10 offset-md-1">
-                  <div class="titlepage">
-                     <h2>Our Glasses</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor
-                        e et dolore magna aliqua. Ut enim ad minim veniam, qui
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass1.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass2.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass3.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass4.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass5.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass6.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass7.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                  <div class="glasses_box">
-                     <figure><img src="images/glass8.png" alt="#"/></figure>
-                     <h3><span class="blu">$</span>50</h3>
-                     <p>Sunglasses</p>
-                  </div>
-               </div>
-               <div class="col-md-12">
-                  <a class="read_more" href="#">Read More</a>
-               </div>
-            </div>
-         </div>
-      </div>
+      
+         
+        
       <!-- end Our  Glasses section -->
       <!--  footer -->
       <footer>
@@ -178,9 +148,9 @@
                <div class="row">
                   <div class="col-md-8 offset-md-2">
                      <ul class="location_icon">
-                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
-                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +01 1234567890</li>
-                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> demo@gmail.com</li>
+                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Barranquilla, Atlantico</li>
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +57 3182596284</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> altamarsunglases@gmail.com</li>
                      </ul>
                   </div>
                </div>
@@ -189,7 +159,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+                        <p>© 2024 Reservados todos los derechos. Diseñado por <a href="#"> David Altamar</a></p>
                      </div>
                   </div>
                </div>
@@ -198,13 +168,24 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="../../js/axiosañadircategoria.js"></script>
+      <script src="../../js/jquery.min.js"></script>
+      <script src="../../js/popper.min.js"></script>
+      <script src="../../js/bootstrap.bundle.min.js"></script>
+      <script src="../../js/jquery-3.0.0.min.js"></script>
+      <script src="../../js/axioscategoria.js"></script>
       <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
+      <script src="../../js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="../../js/custom.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     
+      
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
    </body>
 </html>
 

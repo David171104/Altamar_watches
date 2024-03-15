@@ -6,11 +6,32 @@
   <title>Carrito de Compras</title>
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/carrito.css">
+  <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Altamar Sunglases</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="/Front-End/css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="/Front-End/css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="/Front-End/css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="/Front-End/images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="/Front-End/css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 </head>
-<body>
-    <div class="loader_bg">
-        <div class="loader"><img src="../../images/loading.gif" alt="#" /></div>
-     </div>
+<body class="main-layout position_head">
+   
      <!-- end loader -->
      <!-- header -->
      <header>
@@ -35,14 +56,12 @@
                        <div class="collapse navbar-collapse" id="navbarsExample04">
                           <ul class="navbar-nav mr-auto">
                              <li class="nav-item ">
-                                <a class="nav-link" href="usuario.html">Home</a>
+                                <a class="nav-link" href="usuario.html">Inicio</a>
                              </li>
                              <li class="nav-item active">
-                                <a class="nav-link" href="#">Productos</a>
+                                <a class="nav-link" href="usuario_productos.html">Productos</a>
                              </li>
-                             <li class="nav-item">
-                                <a class="nav-link" href="#">Categorias de Gafas</a>
-                             </li>
+                            
      
                              <li class="nav-item">
                                <a class="nav-link" href="carrito.html">Carrito de compras</a>
@@ -68,6 +87,42 @@
     </ul>
     <button id="finalizar-compra" class="btn-finalizar-compra">Finalizar compra</button>
   </div>
-  <script src="#"></script>
+
+  <footer>
+   <div class="footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-8 offset-md-2">
+               <ul class="location_icon">
+                  <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Barranquilla, Atlantico</li>
+                  <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +57 3182596284</li>
+                  <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> altamarsunglases@gmail.com</li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="copyright">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <p>© 2024 Reservados todos los derechos. Diseñado por <a href="#"> David Altamar</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+
+
+  <script src="/Front-End/js/jquery.min.js"></script>
+      <script src="/Front-End/js/popper.min.js"></script>
+      <script src="/Front-End/js/bootstrap.bundle.min.js"></script>
+      <script src="/Front-End/js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="/Front-End/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="/Front-End/js/custom.js"></script>
+      <script src="/Front-End/js/axioscerrarsesion.js"></script>
+
+      <script src="../../js/axioscarrito.js"></script>
 </body>
 </html>
